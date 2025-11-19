@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ISS – Team 5 Newsletter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <div class="topbar" id="topbar">
+      <div class="brand">
+        <small>Team 5 • ISS Project</small>
+        <h1>International Space Station</h1>
+      </div>
+      <div class="actions">
+        <button class="btn" id="printBtn">Print / PDF</button>
+        <button class="btn" id="themeBtn">Dark Mode</button>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <!-- MAIN COLUMN -->
+      <main>
+        <!-- Intro / Purpose -->
+        <section class="section" id="intro">
+          <header>
+            <div class="kicker">Intro • Mission • Purpose</div>
+            <h2>What this page is</h2>
+          </header>
+          <p>
+            A scroll-first “newsletter page” that keeps the print vibe but uses the web’s width. You’ll find a short biography
+            of Sally Ride, concept pieces on solidification in microgravity and the Astrobee robot, an interactive ISS image
+            with hotspots, a timeline of key station milestones, and a tappable facts section. All elements are designed to be
+            exportable to PDF for assessment.
+          </p>
+          <p style="color:var(--muted)">
+            Prepared by Team 5 — P, Louis, Susumi, Peter (update with your final list).
+          </p>
+        </section>
+
+        <!-- Sally Ride Biography with hotspots -->
+        <section class="section" id="sally">
+          <header>
+            <div class="kicker">Biography</div>
+            <h2>Sally Ride</h2>
+          </header>
+          <article class="bio">
+            <div class="grid">
+              <figure style="margin:0;position:relative">
+                <img src="sally.png" alt="Sally Ride (AI)" id="sallyImg" />
+                <!-- Example hotspots (positions are % of the image box) -->
+                <button class="hotspot"
+                        style="left:30%;top:25%"
+                        data-tip="1983: First American woman in space (STS-7)."></button>
+                <button class="hotspot"
+                        style="left:65%;top:70%"
+                        data-tip="Physicist &amp; educator; co-founded Sally Ride Science to inspire students in STEM."></button>
+                <div class="tip" id="bioTip" style="left:10px;bottom:10px">
+                  Tap the blue dots to learn more.
+                </div>
+              </figure>
+              <div style="padding:.4rem .4rem 1rem">
+                <p>
+                  Sally Ride (1951–2012) was a physicist and NASA astronaut. In 1983 she flew aboard
+                  <em>Challenger</em> on mission STS-7, becoming the first American woman in space, and later served as a
+                  professor and science advocate. Use the blue dots on the photo for quick facts.
+                </p>
+              </div>
+            </div>
+          </article>
+          <p class="hint">
+            Tip: swap the portrait for your own illustration and reposition the dots by changing the inline
+            <code>left/top</code> percentages.
+          </p>
+        </section>
+
+        <!-- Concepts / team sections – P & Swami -->
+        <section class="section" id="concepts">
+          <header>
+            <div class="kicker">Concepts • Experiments</div>
+            <h2>Condensed-matter &amp; engineering on the ISS</h2>
+          </header>
+
+          <div class="concepts-grid">
+            <!-- P: Solidification in Microgravity -->
+            <article class="concept-card collapsible" id="concept-solidification">
+              <button class="collapser" type="button">
+                <h3>Solidification in Microgravity</h3>
+                <span class="collapser-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="collapser-body">
+                <h4>Why solidification behaves differently in space than on Earth</h4>
+                <p>
+                  On Earth molten metals and alloys are able solidify but not without the effects convection has on their
+                  particles. This is because buoyancy forces arise due to gravitational forces acting on particles with
+                  different densities. Essentially, this means that there is a constant flow within the material and thus
+                  crystal growth is distorted and cooling becomes uneven.
+                </p>
+                <p>
+                  However in microgravity, where the gravitational forces are negligible, this convection current disappears as
+                  there are no gravitationally dependent buoyancy forces. This means all movement within the solidification
+                  process must be down to diffusion and thus this gives us the most natural way in which these crystalline
+                  structures form.
+                </p>
+
+                <h4>Directional solidification</h4>
+                <p>
+                  The most prominent method used on the ISS to experiment with solidification is to melt an alloy while
+                  applying a temperature gradient along it so once one end cools it creates a solidification front which moves
+                  along the sample allowing us to observe crystal growth. This crystalline growth travels along the material as
+                  it cools down so we can observe this solidification as a slow wave.
+                </p>
+
+                <h4>Why microgravity changes what we can learn</h4>
+                <p>
+                  (To be expanded in the final draft: link microgravity solidification to cleaner microstructures, better
+                  models, and applications to turbine blades, castings, and high-performance alloys on Earth.)
+                </p>
+
+                <h4>ISS hardware – MSRR and MSL</h4>
+                <p>
+                  (Space here for a short description of the Materials Science Research Rack (MSRR) and the Materials Science
+                  Laboratory (MSL) once you finalise your wording.)
+                </p>
+
+                <h4>Experiments they run on the ISS</h4>
+                <p>
+                  (Space for 1–2 named experiments you decide to feature, e.g. directional solidification of alloys / dendritic
+                  growth in microgravity.)
+                </p>
+
+                <h4>Why it all matters on Earth</h4>
+                <p>
+                  (Tie-in paragraph about industrial casting, turbine blades, 3D printing of metals, and why understanding
+                  microgravity solidification feeds back into everyday technologies.)
+                </p>
+              </div>
+            </article>
+
+            <!-- Swami: Astrobee -->
+            <article class="concept-card collapsible" id="concept-astrobee">
+              <button class="collapser" type="button">
+                <h3>Astrobee: The ISS Robot Shaping the Future of Space Engineering</h3>
+                <span class="collapser-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="collapser-body">
+                <p>
+                  The Astrobee robots themselves are primarily constructed from aluminum for the core frame, with propulsion
+                  module plenums that are largely 3D printed using lightweight Windform XT. The exterior is covered with an
+                  impact-absorbing foam shell to ensure safety during potential collisions in the International Space Station
+                  (ISS).
+                </p>
+
+                <p>
+                  Onboard the International Space Station, among the astronauts and science experiments, floats a cube-shaped
+                  robot named Astrobee — a glimpse into the future of space engineering and robotics.
+                </p>
+                <p>
+                  Developed by NASA, Astrobee is a free-flying robotic assistant designed to operate autonomously in
+                  microgravity. Roughly the size of a shoebox, it uses small electric fans to glide smoothly through the
+                  station’s modules, no wheels or thrusters required. Equipped with cameras and sensors, Astrobee can navigate
+                  the ISS, capture photos and video, monitor equipment, and even run routine checks — freeing astronauts to
+                  focus on more complex tasks.
+                </p>
+
+                <p>
+                  But Astrobee’s role goes beyond convenience. It serves as a testbed for next-generation robotics, providing
+                  valuable insights into how autonomous systems can operate safely and efficiently in space. Engineers on Earth
+                  can remotely control the robot, experimenting with new algorithms for navigation and communication that could
+                  one day be used on missions to the Moon and Mars.
+                </p>
+
+                <p>
+                  Tucked inside the International Space Station is a trio of cube-shaped robots—Honey, Bumble, and Queen—that
+                  do far more than float around looking cute. NASA’s Astrobee system is a full robotics testbed: free fliers, a
+                  docking/charging station, and software that lets engineers on Earth push new algorithms and payloads into
+                  orbit.
+                </p>
+
+                <h4>How it flies</h4>
+                <p>
+                  Each 12.5-inch cube draws cabin air through fans and pushes it out of 12 fixed nozzles, giving
+                  six-degree-of-freedom control without propellant. Vision-based navigation and an onboard computer (running
+                  ROS-based flight software) let Astrobee operate autonomously or under teleoperation from the ground. When the
+                  battery runs low, it returns to a two-berth docking station to recharge.
+                </p>
+
+                <h4>The perching arm: free flying meets manipulation</h4>
+                <p>
+                  A fold-out perching arm can grab ISS handrails to save energy, hold tools, or steady sensors during delicate
+                  measurements. Recent research has extended that arm with a compact, underactuated rigid-soft gripper that can
+                  grasp objects (think: a 2 mm screwdriver) in microgravity, opening the door to real station “handiwork,” not
+                  just inspection.
+                </p>
+
+                <h4>What it actually does all day</h4>
+                <ul>
+                  <li><strong>Mobile camera &amp; inspection:</strong> document experiments, check hardware, and provide extra
+                    “eyes” in tight spots.</li>
+                  <li><strong>Inventory by RFID:</strong> scan RFID-tagged tools and supplies to keep track of thousands of
+                    items.</li>
+                  <li><strong>Listening for trouble (SoundSee):</strong> acoustic monitoring of pumps, fans, and valves to flag
+                    anomalies.</li>
+                  <li><strong>Autonomous caretaking trials (ISAAC):</strong> multiple Astrobees coordinating surveys and anomaly
+                    detection without astronauts.</li>
+                </ul>
+
+                <h4>Why this matters to engineering and robotics</h4>
+                <p>
+                  It’s a systems-engineering playground in real microgravity: vision, control, autonomy, human–robot
+                  interaction, manipulation, and power management all under tight safety constraints. Guest scientists ship code
+                  or 1U hardware payloads, then run experiments on orbit—faster than waiting for a dedicated satellite.
+                </p>
+                <p>
+                  Astrobee’s modular architecture, payload bays, open software stack, and ground tools turn the ISS into a
+                  living lab for algorithms that later migrate to deep-space habitats or planetary robots. Astrobee isn’t just a
+                  helper; it’s a way to try real robotics in space, from SLAM and autonomy to soft-robot grippers and AI
+                  diagnostics.
+                </p>
+
+                <h4>Key specs</h4>
+                <ul>
+                  <li>Form factor: 32 cm cube.</li>
+                  <li>Structure: aluminum core frame; propulsion parts 3D-printed in Windform XT; impact-absorbing foam
+                    exterior.</li>
+                  <li>Brains &amp; senses: cameras, depth sensors, IMU, and onboard computer running ROS-based flight
+                    software.</li>
+                  <li>Home base: two-berth docking station for automatic recharging.</li>
+                  <li>Perching arm with compact gripper for tiny tools (~2 mm screwdriver).</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- ISS image with interactive points + timeline on the right -->
+        <section class="section section--iss" id="iss-interactive">
+          <header>
+            <div class="kicker">Interactive</div>
+            <h2>Explore the ISS</h2>
+          </header>
+
+          <div class="iss-layout">
+            <!-- ISS image -->
+            <figure class="iss-photo">
+              <!-- use your actual file name here instead of iss.jpg if needed -->
+              <img src="iss.jpg" alt="International Space Station (STS-129)" id="issImg" />
+
+              <!-- Hotspots -->
+              <button class="hotspot"
+                      style="left:53%;top:42%"
+                      data-tip="Harmony (Node 2): connects lab modules."></button>
+              <button class="hotspot"
+                      style="left:72%;top:48%"
+                      data-tip="Columbus Laboratory (ESA): European research module."></button>
+              <button class="hotspot"
+                      style="left:35%;top:56%"
+                      data-tip="Kibo (JAXA): Japanese Experiment Module with exposed facility."></button>
+            </figure>
+
+            <!-- Timeline sits beside the image on wide screens -->
+            <aside class="timeline-box">
+              <div class="kicker" style="margin-top:0">ISS timeline</div>
+              <ol class="timeline" id="tl">
+                <li class="event">
+                  <span class="dot"></span>
+                  <time>1998</time> — First module <em>Zarya</em> launched.
+                </li>
+                <li class="event">
+                  <span class="dot"></span>
+                  <time>2000</time> — Expedition 1: first long-duration crew boards the ISS.
+                </li>
+                <li class="event">
+                  <span class="dot"></span>
+                  <time>2008</time> — ESA’s <em>Columbus</em> and JAXA’s <em>Kibo</em> added.
+                </li>
+                <li class="event">
+                  <span class="dot"></span>
+                  <time>2011</time> — Space Shuttle retired; cargo via Dragon, Cygnus, Progress.
+                </li>
+
+                <!-- NEW: interactive team items -->
+                <li class="event" data-target="#exp-nicer">
+                  <span class="dot"></span>
+                  <time>2017</time> — NICER X-ray telescope installed to probe neutron star interiors.
+                </li>
+                <li class="event" data-target="#exp-coldatom">
+                  <span class="dot"></span>
+                  <time>2018</time> — Cold Atom Laboratory begins creating Bose–Einstein condensates in orbit.
+                </li>
+                <li class="event" data-target="#exp-nomex">
+                  <span class="dot"></span>
+                  <time>ISS era</time> — Nomex materials used for fire safety, structure and protective gear.
+                </li>
+
+                <li class="event">
+                  <span class="dot"></span>
+                  <time>2024+</time> — Continues as a research platform; deorbit planning discussed.
+                </li>
+              </ol>
+              <p class="hint hint--timeline">
+                Tap highlighted entries to bring that experiment to the top of the list below.
+              </p>
+            </aside>
+          </div>
+
+          <p class="hint">
+            Replace the image with your high-res file and drag the dots (adjust their <code>left/top</code> %).
+            Click a dot to see its label.
+          </p>
+        </section>
+
+        <!-- Experiments referenced by the timeline -->
+        <section class="section" id="experiments">
+          <header>
+            <div class="kicker">More ISS experiments</div>
+            <h2>What the ISS lets us study</h2>
+          </header>
+
+          <div class="experiments-grid" id="experiments-grid">
+            <!-- Bree: Nomex -->
+            <article class="experiment-card collapsible" id="exp-nomex">
+              <button class="collapser" type="button">
+                <h3>Nomex: Fire-Safe Structure for the ISS</h3>
+                <span class="collapser-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="collapser-body">
+                <h4>What is Nomex?</h4>
+                <p>
+                  Invented by Dr. Wilfrid Sweeny in the 1960s, Nomex is a flame resistant fibre. It is produced by condensation
+                  polymerisation, where meta-phenylenediamine and isophthaloyl chloride react in a solvent to create a solution
+                  known as dope—an aromatic polyamide with aromatic rings. Dry and wet spinning are then used to create the
+                  fibre.
+                </p>
+                <p>
+                  Nomex charrs rather than burns and is used extensively across industries such as firefighting and emergency
+                  response, manufacturing, aerospace and automotive. It is used on the ISS for its flame resistance, lightweight
+                  strength and durability.
+                </p>
+
+                <h4>How does Nomex work?</h4>
+                <p>
+                  When Nomex is exposed to heat, the fibres thicken and carbonise, which absorbs some heat energy. The molecular
+                  structure of Nomex means that heat and electricity cannot flow through it, making it useful for electric arc
+                  flash protection and as an electrical insulator.
+                </p>
+
+                <h4>Benefits and uses of Nomex</h4>
+                <ul>
+                  <li>Chemical resistant, heat resistant, electricity resistant.</li>
+                  <li>Nomex honeycomb: Nomex aramid paper bonded with phenolic resin, used in applications such as lightweight
+                    furniture and panels.</li>
+                </ul>
+
+                <h4>Uses of Nomex on the ISS</h4>
+                <ul>
+                  <li>Reinforcement in spacesuits used on spacewalks, especially where heavy metal loads are carried.</li>
+                  <li>Fire safety in oxygen-rich environments, in case of a fire event.</li>
+                  <li>Honeycomb Nomex used for structural support, panels, and flooring.</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- Olive: NICER -->
+            <article class="experiment-card collapsible" id="exp-nicer">
+              <button class="collapser" type="button">
+                <h3>NICER: Neutron Star Interior Composition Explorer</h3>
+                <span class="collapser-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="collapser-body">
+                <p>
+                  The Neutron Star Interior Composition Explorer, or NICER, is an X-ray telescope on the ISS that primarily
+                  studies the cores of neutron stars. Its mission objectives are to investigate the state of matter within the
+                  star's interior, measure radii to an uncertainty of ±5%, reveal the stability of pulsars as clocks, research
+                  the properties of matter outbursts, and understand how much energy is extracted from the intrinsic radiation,
+                  spectra, and luminosities of the star.
+                </p>
+
+                <p>
+                  The design of the telescope is very intentional. NICER needed to be sensitive to the vibrations and jolts of
+                  the ISS, but insensitive to contamination and radiation from the space station. It needed to compress to stow
+                  safely, yet provide a high observing efficiency, up to ~65%. It can measure the arrival of each X-ray within
+                  100 nanoseconds.
+                </p>
+
+                <h4>Condensed-matter physics in a star’s core</h4>
+                <p>
+                  The research value of the core of neutron stars is in condensed state physics. Astrophysicists predict that
+                  the interior exhibits superfluidity, meaning that the core is a liquid-like plasma with zero viscosity due to
+                  its extremely high density and low temperatures. This “liquid” also means that the neutron star has
+                  differential rotation, where different bands of the star rotate at different speeds. Momentum transfer in this
+                  superfluid is created by scattering of electrons off neutrons bound to the superfluid's vortex cores.
+                </p>
+
+                <p>
+                  NICER has made discoveries about this inner core of neutron stars, revealing what happens to matter on the
+                  verge of imploding into a black hole. Neutron star J0740 showed that the core’s density crushes neutrons close
+                  together, but further research is needed to confirm whether the neutrons stay intact or break down into
+                  quarks.
+                </p>
+
+                <p>
+                  To put this density into perspective, a neutron star's mass is around 1.4× our Sun's, but the average radius is
+                  only around 10–13 km. This extremely high density, and thus strong gravity, distorts spacetime around it.
+                </p>
+
+                <p>
+                  As soon as a neutron star collapses into a black hole, we lose all information we could gather about the exotic
+                  matter it's composed of. NICER allows scientists to make groundbreaking physics research about these
+                  rapidly-rotating stars in our Universe.
+                </p>
+              </div>
+            </article>
+
+            <!-- Louis: Cold Atom Lab -->
+            <article class="experiment-card collapsible" id="exp-coldatom">
+              <button class="collapser" type="button">
+                <h3>Cold Atom Laboratory: Bose–Einstein Condensates in Orbit</h3>
+                <span class="collapser-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="collapser-body">
+                <p>
+                  The Cold Atom Laboratory was launched to the International Space Station (ISS) in May 2018. Its primary goal is
+                  to study exotic states of matter that are difficult to observe on Earth for extended periods of time. One such
+                  state occurs in gases cooled to extremely low temperatures, where the motion of atoms slows dramatically. At
+                  these temperatures atoms no longer behave like individual particles but instead act like waves that overlap and
+                  merge into a single, unified quantum state known as a Bose–Einstein condensate.
+                </p>
+
+                <p>
+                  Conducting this research in space provides a key advantage. On Earth, the force of gravity causes the
+                  condensate to disperse very quickly. However, in the microgravity environment of the ISS, the atomic “cloud”
+                  can remain stable for much longer periods. This extended observation time allows scientists to perform more
+                  precise measurements and experiments, deepening our understanding of quantum phenomena.
+                </p>
+
+                <p>
+                  One of the experiments conducted by the Cold Atom Laboratory involves the creation of dual-species Bose–Einstein
+                  condensates, which contain two different types of atoms within the same system. This was accomplished using
+                  isotopes of rubidium and potassium through a process known as sympathetic cooling.
+                </p>
+
+                <p>
+                  In sympathetic cooling, one atomic species that can be easily cooled by conventional techniques is used to cool
+                  another species that is more difficult to bring to such low temperatures. On the ISS, the rubidium atoms were
+                  first cooled through evaporative cooling, a process in which the most energetic atoms are allowed to escape,
+                  lowering the average temperature of the remaining atoms. These ultracold rubidium atoms were then used to cool
+                  the potassium atoms through direct thermal contact, enabling both species to reach the ultra-low temperatures
+                  necessary to form condensates.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Facts (interactive) -->
+        <section class="section" id="facts">
+          <header>
+            <div class="kicker">Quick facts</div>
+            <h2>Tap to reveal</h2>
+          </header>
+          <div class="facts">
+            <details class="card">
+              <summary>Orbit altitude</summary>
+              <p>~400 km; ~92 min per orbit; ~16 sunsets per day.</p>
+            </details>
+            <details class="card">
+              <summary>Pressurised volume</summary>
+              <p>~388 m³ — comparable to a 5-bedroom house.</p>
+            </details>
+            <details class="card">
+              <summary>Power</summary>
+              <p>~100 kW from solar arrays; microgravity labs rely on this stable supply.</p>
+            </details>
+            <details class="card">
+              <summary>Speed</summary>
+              <p>~7.66 km/s (~27,600 km/h).</p>
+            </details>
+            <details class="card">
+              <summary>Partners</summary>
+              <p>NASA, Roscosmos, ESA, JAXA, CSA and many national agencies / companies.</p>
+            </details>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <img alt="preview" id="lightboxImg">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

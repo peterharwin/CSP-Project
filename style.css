@@ -1,0 +1,401 @@
+:root{
+  --page-bg:#e9e6df;
+  --paper:#fffdf8;
+  --ink:#1c1c1c;
+  --muted:#6a6a6a;
+  --accent:#2a66f8;
+  --accent-2:#ffb000;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+
+body{
+  background:var(--page-bg);
+  color:var(--ink);
+  font:16px/1.55 ui-serif, Georgia, "Times New Roman", serif;
+  transition:background 0.2s ease,color 0.2s ease;
+}
+
+/* Dark mode variables */
+body.dark{
+  --page-bg:#0f1012;
+  --paper:#17181b;
+  --ink:#f1f1f1;
+  --muted:#aaaaaa;
+}
+
+/* App frame */
+.page{
+  width:100%;
+  max-width:none;           /* take full width */
+  margin:0;                 /* no centring here, we centre .wrap instead */
+  background:var(--paper);
+  min-height:100dvh;
+  box-shadow:0 20px 40px rgba(0,0,0,.08);
+}
+
+/* Outer content wrapper – centred, nice and wide */
+.wrap{
+  max-width:1300px;         /* adjust this number to taste (1200–1400 works well) */
+  margin:0 auto;            /* centre the content block */
+  padding:1.5rem;
+}
+
+/* Top bar */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:var(--paper);
+  border-bottom:2px solid rgba(0,0,0,.06);
+  padding:.9rem 1.1rem;
+  display:flex;
+  gap:1rem;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand{display:flex;flex-direction:column}
+.brand small{
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font:600 11px/1 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+h1{
+  font-size:clamp(1.6rem,4vw,2.2rem);
+  margin:.15rem 0 0;
+}
+
+.actions{display:flex;gap:.5rem}
+.btn{
+  border:1px solid rgba(0,0,0,.1);
+  background:var(--page-bg);
+  border-radius:999px;
+  padding:.45rem .8rem;
+  font:600 12px/1 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+.btn:hover{background:#eee8de}
+
+/* Section header */
+.section{scroll-margin-top:80px}
+.section > header{
+  border-left:4px solid var(--accent);
+  padding:.2rem .2rem .2rem .8rem;
+  margin:1.2rem 0;
+}
+.section h2{margin:.2rem 0 .1rem}
+.kicker{
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font:600 11px/1 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Sally Ride bio card with hotspots */
+.bio{
+  position:relative;
+  border:1px solid rgba(0,0,0,.08);
+  background:var(--page-bg);
+  border-radius:14px;
+  overflow:hidden;
+}
+.bio .grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1rem;
+  padding:1rem;
+}
+@media (min-width:720px){
+  .bio .grid{grid-template-columns:300px 1fr;}
+}
+.bio img{
+  width:100%;
+  display:block;
+  border-radius:10px;
+}
+
+.hotspot{
+  position:absolute;
+  transform:translate(-50%,-50%);
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 0 4px rgba(42,102,248,.18);
+  cursor:pointer;
+  border:none;
+}
+.tip{
+  position:absolute;
+  inset:auto 0 0 auto;
+  display:none;
+  max-width:320px;
+  background:#101114;
+  color:#fff;
+  padding:.6rem .7rem;
+  border-radius:10px;
+  font:13px/1.35 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.tip.visible{display:block}
+
+/* ISS image with interactive points */
+.iss-photo{
+  position:relative;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:14px;
+  overflow:hidden;
+  background:var(--page-bg);
+}
+.iss-photo img{
+  width:100%;
+  display:block;
+}
+
+.hint{
+  font:12px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color:var(--muted);
+  margin-top:.4rem;
+}
+
+/* Layout for ISS + timeline beside it */
+.section--iss .iss-layout{
+  display:flex;
+  flex-direction:column;
+  gap:1.5rem;
+}
+@media (min-width:900px){
+  .section--iss .iss-layout{
+    display:grid;
+    grid-template-columns:minmax(0,2fr) minmax(0,1fr);
+    align-items:flex-start;
+    gap:1.5rem;
+  }
+}
+
+/* Timeline */
+.timeline-box{font-size:0.9rem;}
+
+.timeline{
+  border-left:3px solid var(--accent);
+  padding-left:1rem;
+  position:relative;
+  margin:0.5rem 0 0;
+}
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:-6px;
+  top:0;
+  bottom:0;
+  width:9px;
+  background:linear-gradient(180deg,rgba(42,102,248,.25),rgba(42,102,248,0));
+}
+.event{
+  position:relative;
+  margin:1rem 0;
+  padding-left:.2rem;
+}
+.event::marker{content:"";}
+
+/* Facts – expandable cards */
+.facts{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:1rem;
+}
+details.card{
+  background:var(--page-bg);
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:12px;
+  padding:.75rem;
+}
+details.card[open]{
+  background:var(--page-bg);
+  border-color:rgba(255,176,0,.4);
+}
+details.card > summary{
+  font-weight:700;
+  cursor:pointer;
+  list-style:none;
+}
+details.card > summary::-webkit-details-marker{display:none}
+
+/* Sidebar blocks (not used now, but kept in case) */
+.side .block{
+  background:var(--page-bg);
+  border:1px solid rgba(0,0,0,.06);
+  border-radius:10px;
+  padding:.75rem;
+  margin-bottom:1rem;
+  font:13px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+body.dark .side .block{
+  background:rgba(23,24,27,.6);
+}
+
+/* Lightbox */
+.lightbox{
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,.75);
+  z-index:999;
+}
+.lightbox.active{display:flex}
+.lightbox img{
+  max-width:min(95vw,1200px);
+  max-height:90vh;
+  border:6px solid #fff;
+  border-radius:6px;
+}
+
+/* Concepts grid (P + Astrobee) */
+.concepts-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.2rem;
+}
+
+.concept-card{
+  background:var(--page-bg);
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:14px;
+  padding:1rem 1.1rem 1.2rem;
+  font-size:0.94rem;
+}
+
+.concept-card,
+.concept-card * {
+  color: var(--ink);
+}
+
+body.dark .concept-card{
+  background:rgba(23,24,27,.8);
+}
+
+/* Experiments list under ISS */
+.experiments-grid{
+  display:grid;
+  /*grid-template-columns:repeat(auto-fit,minmax(260px,1fr));*/
+  grid-template-columns:1fr;
+  gap:1.2rem;
+}
+
+.experiment-card{
+  background:var(--page-bg);
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:14px;
+  padding:1rem 1.1rem 1.2rem;
+  font-size:0.94rem;
+}
+
+.experiment-card,
+.experiment-card * {
+  color: var(--ink);
+}
+
+body.dark .experiment-card{
+  background:rgba(23,24,27,.8);
+}
+
+/* Collapsible cards (concepts + experiments) */
+.collapser{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:.5rem;
+  background:transparent;
+  border:none;
+  padding:0;
+  margin:0 0 .4rem;
+  font:inherit;
+  text-align:left;
+  cursor:pointer;
+}
+
+.collapser h3{
+  margin:0;
+  font-size:1rem;
+}
+
+.collapser-icon{
+  font-size:1.2rem;
+  line-height:1;
+  font-family:system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color:var(--muted);
+  transition:transform 0.2s ease;
+}
+
+.collapser-body{
+  display:none;
+  margin-top:.2rem;
+}
+
+.collapsible.open .collapser-body{
+  display:block;
+}
+
+.collapsible.open .collapser-icon{
+  transform:rotate(45deg); /* + becomes ×-ish */
+}
+
+/* Highlight when brought to top */
+.experiment--highlight{
+  box-shadow:0 0 0 2px var(--accent-2), 0 12px 26px rgba(0,0,0,.18);
+  transition:box-shadow 0.3s ease;
+}
+
+/* Timeline interactivity */
+.timeline .event{
+  position:relative;
+  margin:1rem 0;
+  padding-left:.2rem;
+  cursor:default;
+}
+
+.timeline .event.event--linked{
+  cursor:pointer;
+}
+
+.timeline .event.event--linked:hover{
+  background:rgba(42,102,248,.05);
+}
+
+.timeline .event.event--active{
+  background:rgba(255,176,0,.12);
+}
+
+.hint--timeline{
+  margin-top:.4rem;
+}
+
+/* Dot – keep it looking nice on top of highlight */
+.timeline .dot{
+  position:absolute;
+  left:-1.4rem;
+  top:.35rem;
+  width:.75rem;
+  height:.75rem;
+  border-radius:50%;
+  background:var(--accent-2);
+  outline:3px solid #fff;
+  border:2px solid #1b1b1b;
+}
+
+/* Print */
+@media print{
+  body{background:#fff}
+  .topbar,.side{display:none}
+  .page{box-shadow:none}
+  .wrap{max-width:none;padding:0 1cm}
+  details.card{border-color:#ccc}
+}
