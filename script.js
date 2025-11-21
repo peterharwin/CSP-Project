@@ -27,7 +27,7 @@ function enableHotspots(container) {
   tip.className = 'tip visible';
   tip.style.left = '10px';
   tip.style.bottom = '10px';
-  tip.textContent = 'Tap blue dots for info';
+  //tip.textContent = 'Tap blue dots for info';
   container.appendChild(tip);
 
   container.querySelectorAll('.hotspot').forEach(btn => {
