@@ -24,7 +24,7 @@ function enableHotspots(container) {
   if (!container) return;
 
   const tip = document.createElement('div');
-  tip.className = 'tip visible';
+  tip.className = 'tip';
   tip.style.left = '10px';
   tip.style.bottom = '10px';
   //tip.textContent = 'Tap blue dots for info';
