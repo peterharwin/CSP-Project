@@ -404,7 +404,7 @@ body.dark .experiment-card{
 .earthkam-gallery {
   margin-top: 2rem;
   padding: 1rem;
-  background: var(--paper);
+  background: var(--paper-bg);
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
