@@ -451,3 +451,9 @@ figcaption {
   text-align: center;   /* optional: center under image */
   margin-top: .4rem;    /* optional: little breathing space */
 }
+
+.iss-photo {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;   /* adjust to 2rem or 3rem if you want bigger space */
+}
