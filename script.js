@@ -65,7 +65,7 @@ lb.addEventListener('click', () => {
 document.querySelectorAll('.gallery-grid img').forEach(img => {
   img.addEventListener('click', () => {
     lightboxImg.src = img.src;
-    lightbox.classList.add('open');
+    lightbox.classList.add('active');
   });
 });
 
