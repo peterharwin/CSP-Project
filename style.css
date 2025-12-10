@@ -430,7 +430,7 @@ body.dark .experiment-card{
 .gallery-grid {
   display: grid;
   gap: 3rem;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 }
 
 .gallery-grid img {
