@@ -429,12 +429,12 @@ body.dark .experiment-card{
 
 .gallery-grid {
   display: grid;
-  gap: 2rem;
+  gap: 4rem;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 }
 
 .gallery-grid img {
-  width: 200%;
+  width: 100%;
   border-radius: 8px;
   cursor: pointer;
   transition: transform .15s ease;
