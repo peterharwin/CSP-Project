@@ -427,6 +427,14 @@ body.dark .experiment-card{
   font-size: 1.4rem;
 }
 
+.MPgallery-grid {
+  display: grid;
+  gap: 1.5rem;
+  justify-items: center;          /* centers each card horizontally */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  margin-top: 2rem;
+}
+
 .gallery-grid {
   display: grid;
   gap: 2.5rem;
