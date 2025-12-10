@@ -204,27 +204,67 @@ h1{
 .event::marker{content:"";}
 
 /* Facts – expandable cards */
-.facts{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
-  gap:1rem;
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
 }
-details.card{
-  background:var(--page-bg);
-  border:1px solid rgba(0,0,0,.08);
-  border-radius:12px;
-  padding:.75rem;
+
+/* Base card style */
+details.card {
+  border-radius: 12px;
+  padding: .75rem;
+  border: 1px solid rgba(0,0,0,.08);
+  background: var(--paper);
+  transition: background 0.25s ease, transform 0.2s ease;
 }
-details.card[open]{
-  background:var(--page-bg);
-  border-color:rgba(255,176,0,.4);
+
+/* Remove default arrow */
+details.card > summary {
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
 }
-details.card > summary{
-  font-weight:700;
-  cursor:pointer;
-  list-style:none;
+details.card > summary::-webkit-details-marker { display: none }
+
+/* Hover lift */
+details.card:hover {
+  transform: translateY(-3px);
 }
-details.card > summary::-webkit-details-marker{display:none}
+
+/* Open state border highlight */
+details.card[open] {
+  border-color: var(--accent-2);
+}
+
+/* --- COLOURS FOR EACH CARD --- */
+details.card:nth-child(1)  { background: #ffe4e62a; }
+details.card:nth-child(2)  { background: #fff3cd2a; }
+details.card:nth-child(3)  { background: #e8f5e92a; }
+details.card:nth-child(4)  { background: #e0f0ff2a; }
+details.card:nth-child(5)  { background: #f3e8ff2a; }
+details.card:nth-child(6)  { background: #ffe7cc2a; }
+details.card:nth-child(7)  { background: #e3ffe22a; }
+details.card:nth-child(8)  { background: #e4f0ff2a; }
+details.card:nth-child(9)  { background: #ffe5f92a; }
+details.card:nth-child(10) { background: #dff7ff2a; }
+details.card:nth-child(11) { background: #fff2cf2a; }
+details.card:nth-child(12) { background: #e9e4ff2a; }
+details.card:nth-child(13) { background: #dfffe92a; }
+details.card:nth-child(14) { background: #ffeaf22a; }
+details.card:nth-child(15) { background: #edefff2a; }
+
+/* --- DARK MODE FIX --- */
+body.dark details.card {
+  border: 1px solid rgba(255,255,255,.06);
+  background: rgba(255,255,255,0.05); /* slight tint, not full colour */
+}
+
+/* Keep colour subtle even in Dark Mode */
+body.dark details.card[open] {
+  border-color: var(--accent-2);
+}
+
 
 /* Sidebar blocks (not used now, but kept in case) */
 .side .block{
