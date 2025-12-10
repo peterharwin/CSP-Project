@@ -238,21 +238,21 @@ details.card[open] {
 }
 
 /* --- COLOURS FOR EACH CARD --- */
-details.card:nth-child(1)  { background: #ffe4e62a; }
-details.card:nth-child(2)  { background: #fff3cd2a; }
-details.card:nth-child(3)  { background: #e8f5e92a; }
-details.card:nth-child(4)  { background: #e0f0ff2a; }
-details.card:nth-child(5)  { background: #f3e8ff2a; }
-details.card:nth-child(6)  { background: #ffe7cc2a; }
-details.card:nth-child(7)  { background: #e3ffe22a; }
-details.card:nth-child(8)  { background: #e4f0ff2a; }
-details.card:nth-child(9)  { background: #ffe5f92a; }
-details.card:nth-child(10) { background: #dff7ff2a; }
-details.card:nth-child(11) { background: #fff2cf2a; }
-details.card:nth-child(12) { background: #e9e4ff2a; }
-details.card:nth-child(13) { background: #dfffe92a; }
-details.card:nth-child(14) { background: #ffeaf22a; }
-details.card:nth-child(15) { background: #edefff2a; }
+.facts details.card:nth-of-type(1)  { background: #ffe4e62a; }
+.facts details.card:nth-of-type(2)  { background: #fff3cd2a; }
+.facts details.card:nth-of-type(3)  { background: #e8f5e92a; }
+.facts details.card:nth-of-type(4)  { background: #e0f0ff2a; }
+.facts details.card:nth-of-type(5)  { background: #f3e8ff2a; }
+.facts details.card:nth-of-type(6)  { background: #ffe7cc2a; }
+.facts details.card:nth-of-type(7)  { background: #e3ffe22a; }
+.facts details.card:nth-of-type(8)  { background: #e4f0ff2a; }
+.facts details.card:nth-of-type(9)  { background: #ffe5f92a; }
+.facts details.card:nth-of-type(10) { background: #dff7ff2a; }
+.facts details.card:nth-of-type(11) { background: #fff2cf2a; }
+.facts details.card:nth-of-type(12) { background: #e9e4ff2a; }
+.facts details.card:nth-of-type(13) { background: #dfffe92a; }
+.facts details.card:nth-of-type(14) { background: #ffeaf22a; }
+.facts details.card:nth-of-type(15) { background: #edefff2a; }
 
 /* --- DARK MODE FIX --- */
 body.dark details.card {
