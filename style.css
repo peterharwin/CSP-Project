@@ -436,6 +436,16 @@ body.dark .experiment-card{
   margin-top: 2rem;
 }
 
+.MPgallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform .15s ease;
+}
+.MPgallery-grid img:hover {
+  transform: scale(1.03);
+}
+
 .gallery-grid {
   display: grid;
   gap: 2.5rem;
