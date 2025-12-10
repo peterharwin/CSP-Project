@@ -429,7 +429,7 @@ body.dark .experiment-card{
 
 .gallery-grid {
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 }
 
@@ -444,3 +444,10 @@ body.dark .experiment-card{
   transform: scale(1.03);
 }
 
+
+figcaption {
+  font-size: 0.75rem;   /* smaller text */
+  color: var(--muted);  /* optional: softer colour */
+  text-align: center;   /* optional: center under image */
+  margin-top: .4rem;    /* optional: little breathing space */
+}
