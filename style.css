@@ -399,3 +399,35 @@ body.dark .experiment-card{
   .wrap{max-width:none;padding:0 1cm}
   details.card{border-color:#ccc}
 }
+
+
+.earthkam-gallery {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: var(--paper);
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.earthkam-gallery h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
+.gallery-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform .15s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
