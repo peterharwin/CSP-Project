@@ -422,6 +422,11 @@ body.dark .experiment-card{
   font-size: 1.4rem;
 }
 
+.MissionPurpose-gallery h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
 .gallery-grid {
   display: grid;
   gap: 1rem;
