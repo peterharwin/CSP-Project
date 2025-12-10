@@ -62,6 +62,14 @@ lb.addEventListener('click', () => {
   lbImg.src = '';
 });
 
+document.querySelectorAll('.gallery-grid img').forEach(img => {
+  img.addEventListener('click', () => {
+    lightboxImg.src = img.src;
+    lightbox.classList.add('open');
+  });
+});
+
+
 // Collapsible cards: concepts + experiments
 const collapsibleCards = document.querySelectorAll('.collapsible');
 
