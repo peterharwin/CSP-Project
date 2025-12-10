@@ -427,25 +427,6 @@ body.dark .experiment-card{
   font-size: 1.4rem;
 }
 
-.MPgallery-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);   
-  gap: 2rem;                              
-  justify-items: center;
-  align-items: start;
-  margin-top: 2rem;
-}
-
-.MPgallery-grid img {
-  width: 100%;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform .15s ease;
-}
-.MPgallery-grid img:hover {
-  transform: scale(1.03);
-}
-
 .gallery-grid {
   display: grid;
   gap: 2.5rem;
@@ -465,6 +446,13 @@ body.dark .experiment-card{
   transform: scale(1.03);
 }
 
+/* SPECIAL LAYOUT FOR MISSION PURPOSE GALLERY ONLY */
+.MissionPurpose-gallery .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);  /* force 4 columns */
+  gap: 2rem;
+  margin-top: 2rem;
+}
 
 figcaption {
   font-size: 0.75rem;   /* smaller text */
