@@ -38,7 +38,9 @@ body.dark{
   width:100%;
   max-width:none;           /* take full width */
   margin:0;                 /* no centring here, we centre .wrap instead */
-  background:var(--paper);
+  /*background:var(--paper);*/
+  background: rgba(255,255,255,0.75); /* overlay */
+  backdrop-filter: blur(2px);
   min-height:100dvh;
   box-shadow:0 20px 40px rgba(0,0,0,.08);
 }
