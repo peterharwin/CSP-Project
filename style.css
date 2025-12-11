@@ -10,21 +10,15 @@
 *{box-sizing:border-box}
 html,body{margin:0}
 
-/*body{
+body{
   background:var(--page-bg);
   color:var(--ink);
   font:16px/1.55 ui-serif, Georgia, "Times New Roman", serif;
   transition:background 0.2s ease,color 0.2s ease;
-}*/
-
-
-body {
-  background-image: url("MilkyWay.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* optional */
 }
+
+
+
 /* Dark mode variables */
 body.dark{
   --page-bg:#0f1012;
@@ -38,8 +32,8 @@ body.dark{
   width:100%;
   max-width:none;           /* take full width */
   margin:0;                 /* no centring here, we centre .wrap instead */
-  /*background:var(--paper);*/
-  background: rgba(255,255,255,0.75); /* overlay */
+  background:var(--paper);
+  /*background: rgba(255,255,255,0.75);*/ /* overlay */
   backdrop-filter: blur(2px);
   min-height:100dvh;
   box-shadow:0 20px 40px rgba(0,0,0,.08);
