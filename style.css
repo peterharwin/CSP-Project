@@ -17,6 +17,14 @@ body{
   transition:background 0.2s ease,color 0.2s ease;
 }
 
+
+body {
+  background-image: url("dendrites_formations.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* optional */
+}
 /* Dark mode variables */
 body.dark{
   --page-bg:#0f1012;
